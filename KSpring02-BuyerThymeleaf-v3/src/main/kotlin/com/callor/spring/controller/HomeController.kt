@@ -1,6 +1,6 @@
 package com.callor.spring.controller
 
-import com.callor.spring.ConfigString
+import com.callor.spring.ConfigData
 import com.callor.spring.model.Buyer
 import com.callor.spring.service.BuyerService
 import com.callor.spring.service.SaleService
@@ -48,8 +48,8 @@ class HomeController {
     @RequestMapping(value = ["/"], method = [RequestMethod.GET])
     fun home(model: Model): String {
 
-        println(ConfigString.APP_NAME)
-        println(ConfigString.APP_VERSION)
+        println(ConfigData.APP_NAME)
+        println(ConfigData.APP_VERSION)
 
         val userList = bService.selectAll()
 //        model.addAttribute("USERS", userList) // java 같은 code
@@ -57,7 +57,7 @@ class HomeController {
         // kotlin code
         model["USERS"] = userList
 
-        return "home"
+        return "redirect:/buyer/list"
     }
 
     /**
@@ -71,27 +71,4 @@ class HomeController {
         return bService.selectAll()
     }
 
-
-    @RequestMapping(value = ["/detail"], method = [RequestMethod.GET])
-    fun detail(
-        model: Model,
-//        userId: String, // 이렇게 해도된다. 대신 변수명은 쿼리문과 같게 써야함
-        @RequestParam("userid") userId: String // 이렇게 하면 변수명은 아무거나 가능
-    ): String {
-
-        val userDetail = bService.findById(userId)
-        model["BUYER"] = userDetail
-
-        return "detail"
-    }
-
-    @ResponseBody
-    @RequestMapping(value=["/insert"], method=[RequestMethod.GET])
-    fun insert():Buyer {
-
-        val insertBuyer = BuyerServiceImplV1.BUYER_LIST[0]
-        bService.insert(insertBuyer)
-
-        return insertBuyer
-    }
 }

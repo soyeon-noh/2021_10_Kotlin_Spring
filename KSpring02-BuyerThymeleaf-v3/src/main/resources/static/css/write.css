@@ -1,0 +1,67 @@
+
+.buyer_write_form {
+    width: 80%;
+    margin: 20px auto;
+}
+.buyer_write_form label,
+.buyer_write_form input{
+    display: inline-block;
+    padding: 0.4rem;
+    margin: 5px 7px;
+}
+
+.buyer_write_form label{
+    width: 20%;
+    text-align: right;
+}
+
+.buyer_write_form input{
+    width: 60%;
+    border: none;
+    border-bottom: 1px solid #aaa;
+}
+
+/*.btn_write {
+    display:block;
+    margin: 20px auto;
+}*/
+
+
+/* 선생님 css */
+
+section.buyer_write {
+    width: 80vw;
+    margin: 10px auto;
+}
+
+section.buyer_write div {
+    width: 80%;
+    margin: 5px auto;
+}
+
+section.buyer_write label,
+section.buyer_write input{
+    display: inline-block;
+    padding: 8px;
+    margin: 5px;
+    border: none;
+    outline: none;
+}
+
+section.buyer_write label {
+    width: 30%;
+    text-align: right;
+}
+
+section.buyer_write input {
+    width: 60%;
+    border: 1px solid #ddd
+}
+/* 이거 home.css 에 옮김
+section.buyer_write div.btn_box {
+    text-align: right;
+}*/
+
+section.buyer_write button:last-of-type {
+    margin-right : calc(10% - 16px) /* margin으로 준만큼 빼주기 */
+}

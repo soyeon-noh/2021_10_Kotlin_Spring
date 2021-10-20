@@ -69,7 +69,9 @@ footer {
     padding: 1rem;
 }
 
-
+div.btn_box {
+    text-align: right;
+}
 
 button {
     width: 20%;

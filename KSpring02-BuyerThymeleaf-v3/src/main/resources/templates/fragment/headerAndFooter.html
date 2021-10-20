@@ -3,9 +3,10 @@
 </header>
 
 <nav th:fragment="navFragment">
+    <script th:src="@{/static/js/nav.js}"></script>
     <ul>
-        <li>Home</li>
-        <li>주문 관리</li>
+        <li class="home">Home</li>
+        <li class="order">주문 관리</li>
         <li class="pay">결제 관리</li>
         <li class="login">로그인</li>
     </ul>

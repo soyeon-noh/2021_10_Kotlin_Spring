@@ -35,5 +35,5 @@ data class Buyer(
     var man_tel: String,
 
     @Column(columnDefinition = "CHAR(4)", nullable = true)
-    var buy_total: Int,
+    var buy_total: Int? = 0
 )

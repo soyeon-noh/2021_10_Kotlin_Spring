@@ -46,7 +46,7 @@ $(function() {
 // 정통적인 방법..?
     function tableClickHandler() { // 이걸 쓰래
         const id = $(this).data("id")
-        location.href = "/detail?userid=" + id
+        location.href = "/buyer/detail?userid=" + id
     }
 
     $("table.buyer_list tr").on("click", tableClickHandler)

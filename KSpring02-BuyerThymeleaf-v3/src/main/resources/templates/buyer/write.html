@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="@{/layout}">
+<section layout:fragment="content" class="buyer_write">
+
+    <form method="POST" class="buyer_write_form">
+        <div>
+            <label>고객ID</label>
+            <input name="userid">
+        </div>
+        <div>
+            <label>이름</label>
+            <input name="name">
+        </div>
+        <div>
+            <label>전화번호</label>
+            <input name="tel">
+        </div>
+        <div>
+            <label>주소</label>
+            <input name="address">
+        </div>
+        <div>
+            <label>담당자명</label>
+            <input name="manager">
+        </div>
+        <div>
+            <label>담당자연락처</label>
+            <input name="man_tel">
+        </div>
+
+        <div class="btn_box">
+            <button type="button" class="btn_write">
+                작성
+            </button>
+            <button type="button" class="btn_back">
+                돌아가기
+            </button>
+        </div>
+    </form>
+</section>
+</html>
