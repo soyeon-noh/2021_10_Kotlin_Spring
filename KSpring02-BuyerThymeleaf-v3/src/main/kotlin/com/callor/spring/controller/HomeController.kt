@@ -32,8 +32,7 @@ class HomeController {
      */
     @Autowired
     private lateinit var bService: BuyerService
-    @Autowired
-    private lateinit var sService: SaleService
+
 
     /**
      * Spring 일반 Controller 예시
@@ -70,5 +69,6 @@ class HomeController {
     fun list(): Array<Buyer> {
         return bService.selectAll()
     }
+
 
 }

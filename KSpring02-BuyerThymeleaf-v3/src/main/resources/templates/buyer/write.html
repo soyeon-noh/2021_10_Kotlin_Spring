@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="@{/layout}">
-<section layout:fragment="content" class="buyer_write">
 
-    <form method="POST" class="buyer_write_form">
-        <div>
-            <label>고객ID</label>
-            <input name="userid">
-        </div>
-        <div>
-            <label>이름</label>
-            <input name="name">
-        </div>
-        <div>
-            <label>전화번호</label>
-            <input name="tel">
-        </div>
-        <div>
-            <label>주소</label>
-            <input name="address">
-        </div>
-        <div>
-            <label>담당자명</label>
-            <input name="manager">
-        </div>
-        <div>
-            <label>담당자연락처</label>
-            <input name="man_tel">
-        </div>
+<form method="post" class="write_form" layout:fragment="content" th:object="${BUYER}">
 
-        <div class="btn_box">
-            <button type="button" class="btn_write">
-                작성
-            </button>
-            <button type="button" class="btn_back">
-                돌아가기
-            </button>
+    <fieldset>
+        <legend>고객 관리</legend>
+
+        <div>
+            <label>고객 ID</label>
+            <input name="userid" th:field="*{userid}">
         </div>
-    </form>
-</section>
-</html>
+        <div>
+            <label>이름</label><input name="name" th:field="*{name}">
+        </div>
+        <div>
+            <label>전화번호</label><input name="tel" th:field="*{tel}">
+        </div>
+        <div>
+            <label>주소</label><input name="address" th:field="*{address}">
+        </div>
+        <div>
+            <label>담당자명</label><input name="manager" th:field="*{manager}">
+        </div>
+        <div>
+            <label>담당자연락처</label><input name="man_tel" th:field="*{man_tel}">
+        </div>
+        <div class="write_btn div_button">
+            <button class="btn_save" type="button">작성하기</button>
+            <button type="button">List</button>
+        </div>
+    </fieldset>
+</form>

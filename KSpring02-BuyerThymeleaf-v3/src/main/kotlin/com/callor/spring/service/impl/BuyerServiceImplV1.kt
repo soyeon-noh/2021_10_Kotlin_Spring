@@ -6,6 +6,7 @@ import com.callor.spring.repository.BuyerRepository
 import com.callor.spring.service.BuyerService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import java.util.*
 import kotlin.random.Random
 
 /**
@@ -25,22 +26,32 @@ class BuyerServiceImplV1(val bRepo: BuyerRepository) : BuyerService {
     // private : 여기 클래스 내부에서만 사용하는 static 변수 선언하기
 
     override fun selectAll(): Array<Buyer> {
-        return ConfigData.BUYER_LIST
+        // return ConfigData.BUYER_LIST
+        return bRepo.findAll().toTypedArray()
     }
 
     override fun findById(userid: String): Buyer {
-        val findUser = ConfigData.BUYER_LIST.filter { buyer -> buyer.userid == userid }
-        return findUser[0]
+//        val findUser = ConfigData.BUYER_LIST.filter { buyer -> buyer.userid == userid }
+//        return findUser[0]
 
+        // repository 의 findById() 는
+        // 실제 데이터(Buyer)를 Optional 이라는 특별한 객체로
+        // wrapping 하여 가져온다.
+        // 필요한 데이터는 .get() method 를 사용하여
+        // 한번 더 추출해 주어야 한다.
+        val buyer:Optional<Buyer> = bRepo.findById(userid)
+        return buyer.get()
     }
 
+    // entity에 설정한 변수만 가져올 수 있다
     override fun findByName(name: String): Array<Buyer> {
-        val userNum = ConfigData.RND.nextInt(ConfigData.BUYER_LIST.size)
-        return arrayOf(ConfigData.BUYER_LIST[userNum])
+//        val userNum = ConfigData.RND.nextInt(ConfigData.BUYER_LIST.size)
+//        return arrayOf(ConfigData.BUYER_LIST[userNum])
+        return bRepo.findByName(name)
     }
 
-    override fun findByTel(name: String): Array<Buyer> {
-        TODO("Not yet implemented")
+    override fun findByTel(tel: String): Array<Buyer> {
+        return bRepo.findByTel(tel)
     }
 
     override fun insert(buyer: Buyer): Buyer {
@@ -50,11 +61,12 @@ class BuyerServiceImplV1(val bRepo: BuyerRepository) : BuyerService {
         return bDao.save(buyer)
     }
 
-    override fun delete(userid: String): Buyer {
-        TODO("Not yet implemented")
+    override fun delete(userid: String) {
+        bDao.deleteById(userid)
     }
 
     override fun update(buyer: Buyer): Buyer {
-        TODO("Not yet implemented")
+        // 혹시모를 나중을 대비해서 insert와 update를 분리해 놓은것이지 기능은 같다
+        return bDao.save(buyer)
     }
 }
