@@ -1,26 +1,24 @@
 $(function(){
-    const button = $("section.buyer_detail button")
+    const button = $("section.order_detail button")
     if(button) {
         $(button).on("click", function(){
             const className = $(this).attr("class")
-            // alert(className)
+//             alert(className)
 
-            let href = `${rootPath}buyer`
+            let href = `${rootPath}order`
 
-            if(className.includes("btn_update")) {
-                // alert("수정" + userid)
-                // alert(`Update  ${userid}`)
-
-                href = `${href}/update/${userid}`
+            if(className.includes("btn_list")){
+//                alert("리스트로 이동")
+            } else if(className.includes("btn_update")) {
+//                 alert("수정하기")
+                 href = `${href}/update/${seq}`
             } else if(className.includes("btn_delete")) {
-                // alert("삭제" + userid)
-
-                href = `${href}/delete/${userid}`
-                if(!confirm("삭제할까요?")){
-                    return false
-                }
+                 href = `${href}/delete/${seq}`
+                 if(!confirm("삭제할까요?")){
+                     return false
+                 }
             }
-            location.href = `${href}`
+             location.href = `${href}`
         })
     }
 })

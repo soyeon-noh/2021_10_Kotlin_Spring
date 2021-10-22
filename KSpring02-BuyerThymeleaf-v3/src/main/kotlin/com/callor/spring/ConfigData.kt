@@ -1,6 +1,7 @@
 package com.callor.spring
 
 import com.callor.spring.model.Buyer
+import com.callor.spring.model.Sales
 import kotlin.random.Random
 
 class ConfigData {
@@ -44,6 +45,18 @@ class ConfigData {
                 buy_total = 10000
             ),
         )
+
+        val SALES_NULL =
+            Sales(
+                seq = null,
+                userid = null,
+                date = null,
+                time = null,
+                pname = null,
+                qty = null,
+                amt = null,
+                total = null
+            )
     }
 
 

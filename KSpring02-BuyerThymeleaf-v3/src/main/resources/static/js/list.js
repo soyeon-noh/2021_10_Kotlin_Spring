@@ -46,8 +46,8 @@ $(function() {
 // 정통적인 방법..?
     function tableClickHandler() { // 이걸 쓰래
         const id = $(this).data("id")
-//        location.href = "/buyer/detail?userid=" + id
-        location.href = `${rootPath}/buyer/detail?userid=${id}`
+        location.href = "/buyer/detail?userid=" + id
+//        location.href = `${rootPath}/buyer/detail?userid=${id}`
 
     }
 

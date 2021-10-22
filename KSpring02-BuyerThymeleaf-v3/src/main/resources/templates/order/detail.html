@@ -3,39 +3,43 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="~{/layout}">
+
 <section layout:fragment="content" class="order_detail">
+    <script th:inline="javascript">
+        const seq = /*[[ ${SALES.seq} ]]*/ null
+    </script>
 
     <div>
         <label>SEQ</label>
-        <sapn th:text="${SALES.seq}"></sapn>
+        <span th:text="${SALES.seq}"></span>
     </div>
     <div>
         <label>USER ID</label>
-        <sapn th:text="${SALES.userid}"></sapn>
+        <span th:text="${SALES.userid}"></span>
     </div>
     <div>
         <label>날짜</label>
-        <sapn th:text="${SALES.date}"></sapn>
+        <span th:text="${SALES.date}"></span>
     </div>
     <div>
         <label>시간</label>
-        <sapn th:text="${SALES.time}"></sapn>
+        <span th:text="${SALES.time}"></span>
     </div>
     <div>
         <label>상품명</label>
-        <sapn th:text="${SALES.pname}"></sapn>
+        <span th:text="${SALES.pname}"></span>
     </div>
     <div>
         <label>단가</label>
-        <sapn th:text="${SALES.qty}"></sapn>
+        <span th:text="${SALES.qty}"></span>
     </div>
     <div>
         <label>수량</label>
-        <sapn th:text="${SALES.amt}"></sapn>
+        <span th:text="${SALES.amt}"></span>
     </div>
     <div>
         <label>총 금액</label>
-        <sapn th:text="${SALES.total}"></sapn>
+        <span th:text="${SALES.total}"></span>
     </div>
 
     <div class="div_button">
