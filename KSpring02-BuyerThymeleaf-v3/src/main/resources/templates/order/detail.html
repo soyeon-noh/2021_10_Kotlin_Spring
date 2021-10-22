@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}">
+<section layout:fragment="content" class="order_detail">
+
+    <div>
+        <label>SEQ</label>
+        <sapn th:text="${SALES.seq}"></sapn>
+    </div>
+    <div>
+        <label>USER ID</label>
+        <sapn th:text="${SALES.userid}"></sapn>
+    </div>
+    <div>
+        <label>날짜</label>
+        <sapn th:text="${SALES.date}"></sapn>
+    </div>
+    <div>
+        <label>시간</label>
+        <sapn th:text="${SALES.time}"></sapn>
+    </div>
+    <div>
+        <label>상품명</label>
+        <sapn th:text="${SALES.pname}"></sapn>
+    </div>
+    <div>
+        <label>단가</label>
+        <sapn th:text="${SALES.qty}"></sapn>
+    </div>
+    <div>
+        <label>수량</label>
+        <sapn th:text="${SALES.amt}"></sapn>
+    </div>
+    <div>
+        <label>총 금액</label>
+        <sapn th:text="${SALES.total}"></sapn>
+    </div>
+
+    <div class="div_button">
+        <button class="btn_list">리스트로</button>
+        <button class="btn_update">수정</button>
+        <button class="btn_delete">삭제</button>
+    </div>
+</section>
+</html>
+

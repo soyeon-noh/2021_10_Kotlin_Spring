@@ -2,42 +2,45 @@
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="@{/layout}">
+      layout:decorator="~{/layout}">
+
+
 <section layout:fragment="content">
-
-    <table>
-
+    <table class="list order_list">
         <thead>
         <tr>
             <th>SEQ</th>
-            <th>고객 ID</th>
-            <th>거래일시</th>
+            <th>USER</th>
             <th>상품명</th>
             <th>단가</th>
             <th>수량</th>
-            <th>합계</th>
+            <th>금액</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>99</td>
-            <td>B001</td>
-            <td>2021-10-21 11:12:00</td>
-            <td>아이폰 13</td>
-            <td>1,500,000</td>
-            <td>10</td>
-            <td>15,000,000</td>
-        </tr>
-        <tr>
-            <td>96</td>
-            <td>B002</td>
-            <td>2021-10-21 12:22:12</td>
-            <td>갤럭시 폴드</td>
-            <td>1,200,000</td>
-            <td>100</td>
-            <td>120,000,000</td>
+        <tr class="buyer_tr" th:each="SALE: ${SALES}" th:data-seq="${SALE.seq}">
+            <td th:text="${SALE.seq}">SEQ</td>
+            <td th:text="${SALE.userid}">USER ID</td>
+            <td th:text="${SALE.pname}">상품명</td>
+            <td th:text="${SALE.amt}">단가</td>
+            <td th:text="${SALE.qty}">수량</td>
+            <td th:text="${SALE.total}">합계</td>
         </tr>
         </tbody>
     </table>
 
+    <div class="btn_box">
+        <div class="div_button">
+            <button class="btn_insert">주문 등록</button>
+        </div>
+    </div>
+    <script>
+    $(function() {
+        $("button.btn_insert").on("click", function(){
+            location.href="/order/insert";
+        })
+    })
+
+    </script>
 </section>
+</html>

@@ -12,11 +12,13 @@ import org.springframework.transaction.annotation.Transactional
 
 // project가 시작될 때 무엇인가를 실행해죠!
 @SpringBootConfiguration
-class DataInit {
+class BuyerDataInit {
 
     private val logger
-        = LoggerFactory.getLogger(DataInit::class.java)
+        = LoggerFactory.getLogger(BuyerDataInit::class.java)
 
+    // setter 주입방식
+    // 메모리 누수 문제가 존재
     @Autowired
     private lateinit var bDao : BuyerRepository
 

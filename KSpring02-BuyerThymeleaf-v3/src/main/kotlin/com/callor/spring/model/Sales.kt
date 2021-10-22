@@ -25,22 +25,26 @@ data class Sales(
     @Id
     @Column(columnDefinition = "BIGINT")
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 자동으로 증가하는 옵션 추가
-    var seq: Long,
-    var date: String,
-    var time: String,
-    var pname: String,
-    var qty: Int,
-    var amt: Int,
-    var total: Int,
+    // ? = null : 공백의 생성자를 생성하기위한 조치
+    var seq: Long? = null,
+    var userid: String? = null,
+    var date: String? = null,
+    var time: String? = null,
+    var pname: String? = null,
+    var qty: Int? = null,
+    var amt: Int? = null,
+    var total: Int? = null,
 
     // 데이터에 특별하게 Date(날짜, 시간형) 값을 사용하고 싶을 때
-
+    @Transient // table 생성할 때 칼럼에 추가하지 말라
     @Temporal(TemporalType.DATE) // 날짜값만
-    var date1 : Date, // util.date 를 import , temporla에서 sql.date을 지원하지 않는듯
+    var date1 : Date? = null, // util.date 를 import , temporla에서 sql.date을 지원하지 않는듯
 
+    @Transient
     @Temporal(TemporalType.TIME) // 시간값만
-    var time1 : Date,
+    var time1 : Date? = null,
 
+    @Transient
     @Temporal(TemporalType.TIMESTAMP) // 날짜와 시간 동시에
-    var date_time : Date,
+    var date_time : Date? = null,
 )
