@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    background: lightsteelblue;
+    color: white;
+    padding: 1.5rem;
+}
+
+nav {
+    width: 80%;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    background: #282c34;
+    color: white;
+}
+
+li {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+li:last-child {
+    margin-left: auto;
+}
+
+table, tr, th, td {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 1rem;
+    background: #eee;
+}
+
+td {
+    padding: 0.5rem;
+
+}
+
+footer {
+    width: 80%;
+    margin: 0 auto;
+    background-color: lightsteelblue;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+}
+
+div.btn_box {
+    text-align: right;
+}
+
+button {
+    width: 20%;
+    padding: 1rem;
+    border: none;
+
+}
+
+.btn_box {
+    display: inline-black;
+    width: 80%;
+    margin: 10px auto;
+
+}
+
+
+.btn_update{
+    background-color: blue;
+    color: white;
+}
+
+.btn_delete{
+    background-color: red;
+    color: white;
+
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}">
+
+<form method="post" class="write_form" layout:fragment="content" th:object="${SALES}">
+
+    <fieldset>
+        <legend>주문 등록</legend>
+
+        <div>
+            <label>USER ID</label>
+            <input name="userid" th:field="*{userid}">
+        </div>
+        <div>
+            <label>상품명</label><input name="pname" th:field="*{pname}">
+        </div>
+        <div>
+            <label>단가</label><input name="qty" type=number th:field="*{qty}">
+        </div>
+        <div>
+            <label>수량</label><input name="amt" type=number th:field="*{amt}">
+        </div>
+        <div>
+            <label>총 금액</label><input name="total" type=number th:field="*{total}">
+        </div>
+        <div class="write_btn div_button">
+            <button class="btn_list" type="button">리스트로</button>
+            <button class="btn_save" type="button">작성하기</button>
+        </div>
+    </fieldset>
+</form>
