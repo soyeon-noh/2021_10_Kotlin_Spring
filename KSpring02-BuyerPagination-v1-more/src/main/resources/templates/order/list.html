@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}">
+
+
+<section layout:fragment="content" class="order_list">
+    <style>
+        section.order_list div.nextPage {
+            background-color: #515d73;
+            color:white;
+            padding: 1rem;
+            text-align: center;
+            curser: pointer;
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+    <table class="list order_list">
+        <thead>
+        <tr>
+            <th>SEQ</th>
+            <th>USER</th>
+            <th>상품명</th>
+            <th>단가</th>
+            <th>수량</th>
+            <th>금액</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="buyer_tr" th:each="SALE: ${SALES}" th:data-seq="${SALE.seq}">
+            <td th:text="${SALE.seq}">SEQ</td>
+            <td th:text="${SALE.userid}">USER ID</td>
+            <td th:text="${SALE.pname}">상품명</td>
+            <td th:text="${SALE.amt}">단가</td>
+            <td th:text="${SALE.qty}">수량</td>
+            <td th:text="${SALE.total}">합계</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="nextPage">더보기</div>
+
+    <div class="btn_box">
+        <div class="div_button">
+            <button class="btn_insert">주문 등록</button>
+        </div>
+    </div>
+    <script>
+    $(function() {
+
+        let currentPage = 0;
+        let lastPage = false;
+
+        $("button.btn_insert").on("click", function(){
+            location.href="/order/insert";
+        })
+        $("div.nextPage").on("click", function(){
+
+            if (lastPage){
+                alert("마지막 페이지 입니다")
+                return false
+            }
+
+            $.ajax({
+                url: `${rootPath}order/sub_page`,
+                data: {page: ++currentPage}, //
+                method: "GET"
+            })
+            .done(function(result){
+                lastPage = result.last
+                $("table.order_list tbody").append(result)
+            })
+        })
+    })
+
+    </script>
+</section>
+</html>

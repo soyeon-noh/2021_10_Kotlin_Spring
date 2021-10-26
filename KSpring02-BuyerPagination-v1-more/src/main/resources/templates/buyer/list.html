@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}">
+
+
+<section layout:fragment="content" class="buyer_list">
+    <style>
+        section.buyer_list div.nextPage {
+            background-color: #515d73;
+            color:white;
+            padding: 1rem;
+            text-align: center;
+            curser: pointer;
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+    <table class="list buyer_list">
+        <thead>
+        <tr>
+            <th>고객 ID</th>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>주소</th>
+            <th>담당자명</th>
+            <th>담당자연락처</th>
+            <th>매출액합계(만원)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- users에 담겨있는걸 foreach로 반복하면서 각요소를 user에 담아서 내부로 보내라 -->
+        <tr class="buyer_tr" th:each="BUYER: ${BUYERS}" th:data-id="${BUYER.userid}">
+            <!-- 서버를통해 데이터를 받아오면 USER.userid 의 내용이 보이고,
+                그냥 돌리면 B001이 보인다는 장점이 있다.-->
+            <td th:text="${BUYER.userid}"/>
+            <td th:text="${BUYER.name}"/>
+            <td th:text="${BUYER.tel}"/>
+            <td th:text="${BUYER.address}"/>
+            <td th:text="${BUYER.manager}"/>
+            <td th:text="${BUYER.man_tel}"/>
+            <td th:text="${BUYER.buy_total}"/>
+        </tr>
+        </tbody>
+    </table>
+    <div class="nextPage">더보기</div>
+    <div class="btn_box">
+        <div class="div_button">
+            <button class="btn_insert">고객 등록</button>
+        </div>
+    </div>
+    <script>
+        $(function () {
+
+            let currentPage = 0;
+            let lastPage = false
+
+
+            $("button.btn_insert").on("click", function () {
+                location.href =`${rootPath}buyer/insert`;
+            })
+            $("div.nextPage").on("click", function () {
+                if (lastPage) {
+                    alert("마지막 페이지 입니다")
+                    return false
+                }
+
+                /**
+                 * project 에 context-path 가 설정되어 있을 때는
+                 * ${rootPath}/buyer/sub_page 와 같이 사용해도 문제가 없다
+                 *
+                 * context-path 가 설정되어 있지 않을 때
+                 * ${rootPath}buyer/sub_page
+                 * http://buyer/sub_page
+                 */
+
+
+                // jQuery.ajax
+                // fetch는 JSON 데이터를 보낼 때 stringify를 이용해 시리얼라이징했는데 여기서는 그냥보낸다.
+                $.ajax({
+                    url: `${rootPath}buyer/sub_page`,
+                    data: {page: ++currentPage}, //JSON.stringify 사용하지 않아도 된다.
+                    method: "GET"
+                })
+                    .done(function (result) { // 우리가 쓰던건 then, ajax는 done
+                        console.log(result.last)
+                        lastPage = result.last // 끝 page면 last가 true 된다
+                        $("table.buyer_list tbody").append(result)
+                    })
+            })
+        })
+    </script>
+</section>
+</html>

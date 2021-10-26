@@ -1,0 +1,8 @@
+<tr class="buyer_tr" th:each="SALE: ${SALES}" th:data-seq="${SALE.seq}">
+    <td th:text="${SALE.seq}">SEQ</td>
+    <td th:text="${SALE.userid}">USER ID</td>
+    <td th:text="${SALE.pname}">상품명</td>
+    <td th:text="${SALE.amt}">단가</td>
+    <td th:text="${SALE.qty}">수량</td>
+    <td th:text="${SALE.total}">합계</td>
+</tr>
