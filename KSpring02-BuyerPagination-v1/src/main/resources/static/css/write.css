@@ -1,0 +1,90 @@
+form.write_form {
+    width: 80%;
+    margin: 1rem auto;
+}
+
+form.write_form fieldset {
+    border: 1px solid #282c34;
+}
+
+form.write_form legend {
+
+}
+
+form.write_form div {
+    width: 80%;
+    margin: 0 auto;
+}
+
+form.write_form label, form.write_form input {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}
+
+form.write_form label {
+    width: 20%;
+    text-align: right;
+}
+
+form.write_form input {
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid lightsteelblue;
+}
+
+form.write_form div.write_btn {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+/*.btn_write {
+    display:block;
+    margin: 20px auto;
+}*/
+
+
+/* 선생님 css *//*
+
+
+section.buyer_write {
+    width: 80vw;
+    margin: 10px auto;
+}
+
+section.buyer_write div {
+    width: 80%;
+    margin: 5px auto;
+}
+
+section.buyer_write label,
+section.buyer_write input{
+    display: inline-block;
+    padding: 8px;
+    margin: 5px;
+    border: none;
+    outline: none;
+}
+
+section.buyer_write label {
+    width: 30%;
+    text-align: right;
+}
+
+section.buyer_write input {
+    width: 60%;
+    border: 1px solid #ddd
+}
+*/
+/* 이거 home.css 에 옮김
+section.buyer_write div.btn_box {
+    text-align: right;
+}*//*
+
+
+section.buyer_write button:last-of-type {
+    margin-right : calc(10% - 16px) */
+/* margin으로 준만큼 빼주기 *//*
+
+}*/

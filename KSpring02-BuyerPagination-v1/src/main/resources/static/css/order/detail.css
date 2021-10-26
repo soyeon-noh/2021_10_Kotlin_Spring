@@ -1,0 +1,46 @@
+section.order_detail {
+    width: 80vw;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+
+    /*border: 1px solid blue;*/
+}
+
+section.order_detail div {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 80%;
+
+    margin: 0 auto;
+    padding: 10px
+    justify-content: center;
+    align-items: center;
+
+    /*border: 1px solid green;*/
+}
+
+section.order_detail label,
+section.order_detail span{
+    padding: 0.5rem;
+    margin: 0;
+    border: 1px solid #ddd;
+}
+
+section.order_detail label {
+    width: 30%;
+    background-color: #eee;
+    text-align: right;
+}
+
+section.order_detail span {
+    padding-left: 10px;
+    width: 70%
+}
+
+
+div.div_button {
+   padding: 10px 0;
+   justify-content: center;
+}
