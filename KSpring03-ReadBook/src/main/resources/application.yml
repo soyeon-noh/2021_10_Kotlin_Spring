@@ -1,0 +1,10 @@
+# 만약 Java 코드라면
+# Optional<List<String>> config = new Optional<List<String>>();
+#  config.add("classpath:app-jpa.yml")
+#  config.add("classpath:dbms.yml")
+
+spring:
+  config:
+    import: >
+      optional:classpath:application-jpa.yml,
+      optional:classpath:application-dbms.yml
