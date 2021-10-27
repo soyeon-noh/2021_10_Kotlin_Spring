@@ -1,29 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/write.css}">
+    <!-- jquery 를 script보다 먼저 적용해줘야한다.-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script th:src="@{/static/js/write.js}"></script>
+
 </head>
 <body>
 <header>
     <h1>READ BOOK</h1>
     <p>똑 소리나는 독서록 2021 v1</p>
 </header>
-<section>
-    <div>
-        <input placeholder="도서번호"/>
-        <input placeholder="도서명"/>
-    </div>
-    <div>
-        <input placeholder="대여일"/>
-        <input placeholder="대여시각"/>
-    </div>
-    <div>
-        <input placeholder="반납일"/>
-        <input placeholder="반납시각"/>
-    </div>
-    <div><input placeholder="제목"/>
-    <div><textarea placeholder="내용"/>
-</section>
+<form method="POST" class="write_form">
+    <section>
+        <div>
+            <input name="isbn" placeholder="ISBN"/>
+            <input name="title" placeholder="도서명"/>
+        </div>
+        <div>
+            <input name="sdate" placeholder="읽기시작한 날짜"/>
+            <input name="stime" placeholder="읽기시작한 시각"/>
+        </div>
+        <div>
+            <input name="edate" placeholder="완독날짜"/>
+            <input name="etime" placeholder="완독시각"/>
+        </div>
+        <div><input name="rating" class="title" placeholder="만족도"/></div>
+        <div><textarea name="comment" placeholder="소감" rows="20" style="resize: none;"></textarea></div>
+        <div class="button_box">
+            <button class="btn_list">리스트보기</button>
+            <button class="btn_rewrite">다시작성</button>
+            <button type="button" class="btn_save">저장</button>
+        </div>
+    </section>
+</form>
 </body>
 </html>

@@ -9,4 +9,8 @@ spring:
         order_update: true
 
         format_sql: ture
+
+    hibernate:
+      ddl-auto: create
+
     show-sql: true

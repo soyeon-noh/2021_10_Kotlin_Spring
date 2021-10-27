@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    margin: 0 auto;
+
+    background-color: #3A1D1D;
+
+    height: 15vh;
+    text-align: center;
+    justify-content: center;
+}
+
+header h1 {
+    color: #FC5563;
+}
+
+header p {
+    color: #F3EED9;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #D1E7E0;
+
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+}
+
+section div {
+    display: inline-block;
+    margin: 0.3rem;
+}
+
+section div input,
+section div textarea {
+    width: 30%;
+    padding: 0.8rem;
+    border: 1px solid #D1E7E0;
+    border-radius: 5px;
+}
+
+section div input.title {
+    width: 60%;
+}
+
+section div textarea {
+    width: 60%;
+}
+
+.button_box {
+    text-align: right;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.button_box button{
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.button_box button.btn_list {
+    background-color: #3A1D1D;
+    color: white;
+}
+
+.button_box button.btn_rewrite {
+background-color: #F3EED9;
+    color: #3A1D1D;
+}
+.button_box button.btn_save {
+    background-color: #FC5563;
+    color: white;
+}
+
+.button_box button:last-of-type {
+    margin-right : 0.4rem /* margin으로 준만큼 빼주기 */
+}

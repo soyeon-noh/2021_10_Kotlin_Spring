@@ -8,3 +8,11 @@ spring:
     import: >
       optional:classpath:application-jpa.yml,
       optional:classpath:application-dbms.yml
+  mvc:
+    static-path-pattern: /static/**
+  web:
+    resources:
+      static-locations: classpath:static/
+      add-mappings: true
+  # logger Setting
+  output.ansi.enabled: ALWAYS
