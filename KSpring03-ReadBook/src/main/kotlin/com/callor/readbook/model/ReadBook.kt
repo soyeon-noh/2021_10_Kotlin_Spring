@@ -1,21 +1,19 @@
 package com.callor.readbook.model
 
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name="tbl_readbook", schema = "naraDB")
 data class ReadBook(
     @Id
     @Column(columnDefinition = "BIGINT", nullable = false, unique = true)
-    var seq: String?= null,
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var seq: Long?= 0,
     @Column(columnDefinition = "CHAR(13)", nullable = false)
     var isbn: String?= null,
-    @Column(columnDefinition = "CHAR(8)", nullable = false)
+    @Column(columnDefinition = "CHAR(10)", nullable = false)
     var sdate: String?= null,
-    @Column(columnDefinition = "CHAR(8)", nullable = false)
+    @Column(columnDefinition = "CHAR(10)", nullable = false)
     var edate: String?= null,
     @Column(columnDefinition = "CHAR(5)", nullable = false)
     var stime: String?= null,

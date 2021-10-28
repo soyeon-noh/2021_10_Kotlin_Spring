@@ -24,12 +24,9 @@ class ReadBookController(val bService: BookService, val rService: ReadBookServic
     @ResponseBody
     @RequestMapping(value= ["/insert"], method =[RequestMethod.POST])
     fun insert(book:Book, readBook:ReadBook): Book {
-        readBook.seq = "1"
+//        readBook.seq = 1
         bService.insert(book)
         rService.insert(readBook)
-
-
-
         return book
     }
 }
