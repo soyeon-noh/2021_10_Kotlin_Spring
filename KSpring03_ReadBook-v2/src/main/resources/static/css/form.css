@@ -77,5 +77,8 @@ form.readbook_write button.reset {
 
 form.readbook_write button.list {
     background-color: #f6e5a7;
+}
 
+form.login_form button.login {
+    background-color: #70bbef;
 }

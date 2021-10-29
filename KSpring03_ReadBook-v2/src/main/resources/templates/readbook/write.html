@@ -6,6 +6,8 @@
     <form class="readbook_write" method="POST">
         <fieldset>
             <legent>독서록 작성</legent>
+            <input type="hidden" th:name="*{_csrf.parameterName}"
+                   th:value="*{_csrf.token}"/>
             <div class="input">
                 <input name="isbn" placeholder="ISBN"/>
                 <input name="title" placeholder="도서명"/>
