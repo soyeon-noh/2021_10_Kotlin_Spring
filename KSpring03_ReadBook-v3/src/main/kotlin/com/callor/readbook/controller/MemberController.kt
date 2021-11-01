@@ -14,4 +14,9 @@ class MemberController {
     fun login():String {
         return "member/login"
     }
+
+    @RequestMapping(value=["/mypage"], method=[RequestMethod.GET])
+    fun mypage():String{
+        return "member/mypage"
+    }
 }
