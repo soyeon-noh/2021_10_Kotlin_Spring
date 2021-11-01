@@ -1,11 +1,11 @@
-package com.callor.readbook.demo
+package com.callor.readbook
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class DemoApplication
+class ReadBookSecurityApplication
 
 fun main(args: Array<String>) {
-	runApplication<DemoApplication>(*args)
+	runApplication<ReadBookSecurityApplication>(*args)
 }
