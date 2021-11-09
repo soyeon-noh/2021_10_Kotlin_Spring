@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http:/www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script th:inline="javascript">
+        const rootPath = /*[[@{/}]]*/
+    </script>
+
+    <link rel="stylesheet" th:href="@{/static/css/main.css}">
+    <link rel="stylesheet" th:href="@{/static/css/form.css}">
+    <title>Book Report</title>
+</head>
+<body>
+    <!-- include 하는건 th -->
+    <!-- header부분만 여기에 끼워넣어라 -->
+    <th:block th:replace="fragment/headerAndFooter :: headerFragment"/>
+    <!-- 끌어오는건 layout -->
+    <th:block layout:fragment="content"></th:block>
+    <th:block th:replace="fragment/headerAndFooter :: footerFragment"/>
+</body>
+</html>
