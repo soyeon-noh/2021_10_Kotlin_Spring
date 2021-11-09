@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="Ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+<section layout:fragment="content" class>
 <h1>MY PAGE</h1>
 <p>로그인한 사용자만 볼 수 있음</p>
 <form method="POST" th:action="@{/logout}">
     <button>로그아웃</button>
-
 </form>
-</body>
-</html>
+</section>

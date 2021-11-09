@@ -27,6 +27,21 @@ header {
     /*background-size: 100% 100%;*/
 }
 
+ul.readbook_nav{
+    list-style: none;
+    display: flex;
+    background-color: darkslateblue;
+    color: white;
+}
+
+ul.readbook_nav li {
+    padding: 0.4rem;
+}
+
+ul.readbook_nav li:hover {
+    background-color: deeppink;
+}
+
 section.content {
     flex: 1;
     overflow: auto;
