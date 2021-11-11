@@ -25,5 +25,5 @@ data class MemberVO(
     fun setAuthorities(authorities: Collection<GrantedAuthority>) {
         this.authorities = authorities
     }
-
 }
+

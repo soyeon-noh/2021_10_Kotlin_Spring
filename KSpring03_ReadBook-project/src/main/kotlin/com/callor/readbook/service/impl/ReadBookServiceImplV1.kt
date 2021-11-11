@@ -9,7 +9,9 @@ import com.callor.readbook.service.ReadBookService
 import org.springframework.stereotype.Service
 
 @Service("readBookServiceV1")
-class ReadBookServiceImplV1(val readBookDao: ReadBookRepository, val bookDao: BookRepository): ReadBookService {
+class ReadBookServiceImplV1
+    (val readBookDao: ReadBookRepository, val bookDao: BookRepository)
+    : ReadBookService {
     override fun readBookInsert(readBook: ReadBookVO){
         val readBookDTO = ReadBookDTO(
             isbn = readBook.isbn,

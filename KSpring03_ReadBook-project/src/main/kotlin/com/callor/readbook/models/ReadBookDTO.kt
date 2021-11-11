@@ -20,3 +20,4 @@ data class ReadBookDTO(
     var subject: String? = null,
     var content: String? = null
 )
+

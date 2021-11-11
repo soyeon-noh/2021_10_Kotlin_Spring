@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod
 
 @Controller
 class ReadBookController(val readBookService: ReadBookService){
-//
-//    @RequestMapping(value = ["/", ""], method=[RequestMethod.GET])
-//    fun home(): String {
-//        return "redirect:/insert"
-//    }
 
     @RequestMapping(value = ["/insert"], method=[RequestMethod.GET])
     fun insert(): String {

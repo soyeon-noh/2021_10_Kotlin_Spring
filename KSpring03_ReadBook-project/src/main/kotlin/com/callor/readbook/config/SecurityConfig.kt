@@ -1,7 +1,6 @@
 package com.callor.readbook.config
 
 import com.callor.readbook.service.MemberLoginService
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringBootConfiguration
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder

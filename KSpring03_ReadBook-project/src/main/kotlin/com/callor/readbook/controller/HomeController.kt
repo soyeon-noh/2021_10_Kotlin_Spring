@@ -12,3 +12,4 @@ class HomeController {
         return "redirect:/member/mypage"
     }
 }
+
